@@ -1,10 +1,10 @@
 # Jady's MacBook Configurations  
-A repository for all my macOS configuration settings and tools. This includes **zsh functions**, **zshrc**, and **Neovim setup**.
+A repo for all my macOS configuration settings and tools. This includes **zsh functions**, **zshrc**, and **Neovim setup**.
 
----
-
-## 📁 **Zsh Functions**  
-Your custom zsh functions are located in:  
+<details>
+<summary>📁 <strong>Zsh Functions</strong></summary>
+  
+<br>Your custom zsh functions are located in:  
 `~/.zsh/functions`
 
 ### ⚙️ Ensure Proper Permissions  
@@ -21,15 +21,20 @@ for func_file in ~/.zsh/functions/*.zsh; do
   source "$func_file"
 done
 ```
+</details>
 
-
-## 🔧 Zsh Configuration (zshrc)
-Your zsh configuration file should be in:
+<details>
+<summary>🔧 <strong>Zsh Configuration (zshrc)</strong></summary>
+  
+<br>Your zsh configuration file should be in:
 `~/.zshrc`
+</details>
 
-
-## ✨ Neovim Setup
-Your Neovim configuration should be stored in:
+<details>
+<summary>✨ <strong>Neovim Setup</strong></summary>
+  
+<br>Your Neovim configuration should be stored in:
 `~/.config/nvim`
+</details>
 
-# Happy configuring! 🚀
+## Happy configuring! 🚀
