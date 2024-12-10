@@ -36,13 +36,7 @@ source ~/.nvm/nvm.sh
 plugins=(
   git
   zsh-syntax-highlighting
-  zsh-autosuggestions
 )
-
-# ========================================
-# Plugin Configs
-# ========================================
-export FUNCNEST=100
 
 # ========================================
 # User Configuration
