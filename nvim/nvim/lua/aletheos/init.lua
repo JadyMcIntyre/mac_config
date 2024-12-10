@@ -1,4 +1,4 @@
-print("Loaded Aletheos Settings")
+print("διὰ πίστεως γὰρ περιπατοῦμεν, οὐ διὰ εἴδους.")
 require("aletheos.remap")
 
 --- --- --- --- ---
