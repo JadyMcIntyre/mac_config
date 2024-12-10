@@ -2,8 +2,8 @@
 A repository for all my macOS configuration settings and tools. This includes **zsh functions**, **zshrc**, and **Neovim setup**.
 
 ---
-<details>
-<summary> ## 📁 **Zsh Functions**  <summary>
+
+## 📁 **Zsh Functions**  
 Your custom zsh functions are located in:  
 `~/.zsh/functions`
 
@@ -11,17 +11,17 @@ Your custom zsh functions are located in:
 Make sure the functions are readable by running:  
 ```bash
 chmod +r ~/.zsh/functions/*.zsh
-                           ```
+```
 ### 📌 Important:
 - All function files should have the .zsh extension. <br>
 - in you `~/.zshrc` ensure that you have the following code:
 ```bash
 # Source all custom functions
 for func_file in ~/.zsh/functions/*.zsh; do
-source "$func_file"
+  source "$func_file"
 done
 ```
-<details> 
+
 
 ## 🔧 Zsh Configuration (zshrc)
 Your zsh configuration file should be in:
