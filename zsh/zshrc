@@ -89,6 +89,6 @@ if [ "$TERM_PROGRAM" = "Apple_Terminal" ]; then
 else
 	echo "Oh My Posh is enabled"
 	eval "$(oh-my-posh init zsh)"
-fr
+fi
 
 # =======================================
