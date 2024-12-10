@@ -1,4 +1,4 @@
-# Jady's Macbook Configuration
+# Jady's Macbook Configurations
  a repo that contains all my mac config stuff: 
  
  zsh functions
