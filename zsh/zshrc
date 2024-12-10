@@ -85,9 +85,9 @@ eval "$(starship init zsh)"
 # Oh My Posh Prompt
 # ========================================
 # Initialize Oh My Posh prompt for non-Apple terminals and switch off for ssl
-if [ "$TERM_PROGRAM" != "Apple_Terminal" ] || [ "$TERM" != "ssl" ] || [ "$TERM" != "xterm-256color" ]; then
+if [ "$TERM_PROGRAM" = "Apple_Terminal" ] && [ "$TERM" = "ssl" ] && [ "$TERM" = "xterm-256color" ]; then
+	echo "Oh My Posh is Disabled for TERM=$TERM and TERM_PROGRAM=$TERM_PROGRAM"
+else
 	echo "Oh My Posh is enabled"
 	eval "$(oh-my-posh init zsh)"
-else
-	echo "Oh My Posh is Disabled for TERM=$TERM and TERM_PROGRAM=$TERM_PROGRAM"
 fi
