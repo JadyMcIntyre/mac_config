@@ -1,7 +1,7 @@
-echo "Loading zsh..."
 # ========================================
 # Oh My Zsh Configuration
 # ========================================
+unset MAIL
 
 # Path to your Oh My Zsh installation
 export ZSH="$HOME/.oh-my-zsh"
@@ -93,5 +93,3 @@ else
 fr
 
 # =======================================
-
-echo "Loaded zsh"
