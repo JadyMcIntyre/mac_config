@@ -1,3 +1,4 @@
+-- Walk by faith, not by sight
 print("διὰ πίστεως γὰρ περιπατοῦμεν, οὐ διὰ εἴδους.")
 require("aletheos.remap")
 
