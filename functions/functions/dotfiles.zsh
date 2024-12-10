@@ -14,7 +14,7 @@ save_zshrc() {
 save_nvim() {
 	cd ~/Developer/mac_config
 
-	cp ~/.zshrc ./zsh/zshrc
+	cp -r ~/.config/nvim ./nvim
 
 	git add .
 	git commit -m "nvim backup"
