@@ -88,7 +88,6 @@ eval "$(starship init zsh)"
 if [ "$TERM_PROGRAM" = "Apple_Terminal" ]; then
 	echo "Oh My Posh is Disabled for $TERM_PROGRAM"
 else
-	echo "Oh My Posh is enabled"
 	eval "$(oh-my-posh init zsh)"
 fi
 
