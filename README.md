@@ -18,7 +18,10 @@ All function files should have the .zsh extension.
 ### ✏️ Usage:
 in you `~/.zshrc` ensure that you have the following code:
 ```bash
-
+# Source all custom functions
+for func_file in ~/.zsh/functions/*.zsh; do
+  source "$func_file"
+done
 ```
 
 
