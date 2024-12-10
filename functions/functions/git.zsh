@@ -7,14 +7,16 @@ rf() {
 	echo "Select the source:"
 	echo "1) main"
 	echo "2) commit hash"
-	read -p "Enter your choice (1 or 2): " choice
+	echo -n "Enter your choice (1 or 2): "  # Use echo -n to prompt without a newline
+	read choice
 
 	case $choice in
 		1)
 			source="main"
 			;;
 		2)
-			read -p "Enter the commit hash: " commit_hash
+			echo -n "Enter the commit hash: "
+			read commit_hash
 			if [ -z "$commit_hash" ]; then
 				echo "Error: No commit hash provided."
 				return 1
@@ -28,7 +30,8 @@ rf() {
 	esac
 
 	# Prompt the user to provide the file path
-	read -p "Enter the file path to restore: " file_path
+	echo -n "Enter the file path to restore: "
+	read file_path
 
 	if [ -z "$file_path" ]; then
 		echo "Error: No file path provided."
