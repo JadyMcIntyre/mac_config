@@ -2,7 +2,8 @@ echo "Loading ~/.zshrc..."
 # ========================================
 # Oh My Zsh Configuration
 # ========================================
-unset MAIL
+MAIL=/dev/null
+mailpath="($MAIL?test)"
 
 # Path to your Oh My Zsh installation
 export ZSH="$HOME/.oh-my-zsh"
