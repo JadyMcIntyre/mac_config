@@ -4,7 +4,9 @@
  zsh functions
  your zsh functions are in:
  ~/.zsh/functions
- make sure they are readable and have the .zsh extension
+ make sure they are readable:
+ chmod +r  ~/.zsh/functions/*.zsh
+ and have the .zsh extension
  
  zshrc:
  your zshrc should be in:
