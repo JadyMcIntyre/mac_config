@@ -13,10 +13,8 @@ Make sure the functions are readable by running:
 chmod +r ~/.zsh/functions/*.zsh
 ```
 ### 📌 Important:
-All function files should have the .zsh extension.
-
-### ✏️ Usage:
-in you `~/.zshrc` ensure that you have the following code:
+- All function files should have the .zsh extension. <br>
+- in you `~/.zshrc` ensure that you have the following code:
 ```bash
 # Source all custom functions
 for func_file in ~/.zsh/functions/*.zsh; do
