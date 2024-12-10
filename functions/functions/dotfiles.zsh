@@ -33,4 +33,5 @@ ez() {
 # nvim
 ev() {
    nvim ~/.config/nvim/
+   save_nvim
 }
