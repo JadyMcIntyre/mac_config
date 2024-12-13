@@ -68,7 +68,7 @@ fi
 export PATH="/usr/local/Caskroom/flutter/3.13.6/flutter/bin:$PATH"
 export PATH="$PATH:$HOME/.pub-cache/bin"
 export PATH="/Users/JadyMcIntyre/bin:$PATH"
-
+export PATH="$PATH:/Users/JadyMcIntyre/.dotnet/tools"
 # ========================================
 # Functions
 # ========================================
