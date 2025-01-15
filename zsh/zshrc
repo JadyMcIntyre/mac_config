@@ -81,17 +81,6 @@ done
 # Initialize Starship prompt
 eval "$(starship init zsh)"
 
-# ========================================
-# Oh My Posh Prompt
-# ========================================
-# Initialize Oh My Posh prompt for non-Apple terminals and switch off for ssh
-if [ "$TERM_PROGRAM" = "Apple_Terminal" ]; then
-	echo "Oh My Posh is Disabled for $TERM_PROGRAM"
-else
-	eval "$(oh-my-posh init zsh)"
-fi
-
 # =======================================
-
 
 echo "...Loaded ~/.zshrc"
