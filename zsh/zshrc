@@ -1,4 +1,4 @@
-echo "Loading ~/.zshrc..."
+echo "Sourcing ~/.zshrc..."
 
 # ========================================
 # Oh My Zsh Configuration
@@ -84,4 +84,4 @@ eval "$(starship init zsh)"
 
 # =======================================
 
-echo "...Loaded ~/.zshrc"
+echo "...Sourced ~/.zshrc"
