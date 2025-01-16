@@ -60,6 +60,7 @@ fi
 # Define custom aliases here
 # Example:
 # alias zshconfig="nvim ~/.zshrc"
+alias vcharm="ssh git.charm.sh"
 
 # ========================================
 # Paths
