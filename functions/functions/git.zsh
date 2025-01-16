@@ -21,10 +21,18 @@ rf() {
 		source="$commit_hash"
 	fi
 
-	# Prompt the user to provide the file path using gum
-	file_path=$(gum input --placeholder="Enter the file path to restore")
+	# Use git to list changed files
+	changed_files=$(git status --porcelain | awk '{print $2}')
+	if [ -z "$changed_files" ]; then
+		echo "No changed files to restore."
+		return 1
+	fi
+
+	# Use gum to let the user select a file
+	file_path=$(echo "$changed_files" | gum choose --no-limit --header="Select the file to restore")
+
 	if [ -z "$file_path" ]; then
-		echo "Error: No file path provided."
+		echo "Error: No file selected."
 		return 1
 	fi
 
