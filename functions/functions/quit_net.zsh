@@ -7,6 +7,6 @@ kn() {
         kill "$PID"
         echo "Process terminated."
     else
-        echo "No matching process found for /Applications/Netskope"
+        echo "No matching process found"
     fi
 }
