@@ -48,10 +48,10 @@ gr() {
 
 # Create a commit
 gc() {
-	# Use git to list all changed files
+	# Get the list of files with changes (modified, staged, or untracked)
 	changed_files=$(git status --porcelain | awk '{print $2}')
 	if [ -z "$changed_files" ]; then
-		echo "No changed files to stage."
+		echo "No changed files to commit."
 		return 1
 	fi
 
@@ -65,6 +65,13 @@ gc() {
 
 	# Stage the selected files
 	git add $files_to_add
+
+	# Confirm that files have been staged
+	staged_files=$(git diff --cached --name-only)
+	if [ -z "$staged_files" ]; then
+		echo "No files staged. Aborting commit."
+		return 1
+	fi
 
 	# Proceed to the commit process
 	TYPE=$(gum choose "fix" "feat" "docs" "style" "refactor" "test" "chore" "revert")
@@ -83,6 +90,8 @@ gc() {
 		gum style --foreground="green" "Changes committed successfully!"
 	else
 		gum style --foreground="red" "Commit aborted."
+		# Optionally unstage files if commit is aborted
+		git reset
 	fi
 }
 # ---------------------------
