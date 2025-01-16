@@ -11,7 +11,7 @@ rf() {
 		return 1
 	fi
 
-	if [ "$source" == "commit hash" ]; then
+	if [ "$source" = "commit hash" ]; then
 		# Prompt the user to enter the commit hash
 		commit_hash=$(gum input --placeholder="Enter the commit hash")
 		if [ -z "$commit_hash" ]; then
