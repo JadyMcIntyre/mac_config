@@ -1,8 +1,8 @@
 # Git Functions:
 
 # restore file to main
-# Usage: rf <path>
-rf() {
+# Usage: gr <path>
+gr() {
 	# Prompt the user to select the source using gum
 	source=$(gum choose --header="Select the source:" "main" "commit hash")
 
@@ -46,4 +46,43 @@ rf() {
 	fi
 }
 
+# Create a commit
+gc() {
+	# Use git to list all changed files
+	changed_files=$(git status --porcelain | awk '{print $2}')
+	if [ -z "$changed_files" ]; then
+		echo "No changed files to stage."
+		return 1
+	fi
+
+	# Use gum to let the user select files to stage
+	files_to_add=$(echo "$changed_files" | gum choose --no-limit --header="Select files to stage")
+
+	if [ -z "$files_to_add" ]; then
+		echo "No files selected. Aborting commit."
+		return 1
+	fi
+
+	# Stage the selected files
+	git add $files_to_add
+
+	# Proceed to the commit process
+	TYPE=$(gum choose "fix" "feat" "docs" "style" "refactor" "test" "chore" "revert")
+	SCOPE=$(gum input --placeholder "scope")
+
+	# Since the scope is optional, wrap it in parentheses if it has a value.
+	test -n "$SCOPE" && SCOPE="($SCOPE)"
+
+	# Pre-populate the input with the type(scope): so that the user may change it
+	SUMMARY=$(gum input --value "$TYPE$SCOPE: " --placeholder "Summary of this change")
+	DESCRIPTION=$(gum write --placeholder "Details of this change")
+
+	# Commit these changes if the user confirms
+	if gum confirm "Commit changes?"; then
+		git commit -m "$SUMMARY" -m "$DESCRIPTION"
+		gum style --foreground="green" "Changes committed successfully!"
+	else
+		gum style --foreground="red" "Commit aborted."
+	fi
+}
 # ---------------------------
