@@ -15,6 +15,7 @@ ZSH_THEME="passion"
 plugins=(
   git
   zsh-syntax-highlighting
+  zsh-autosuggestions
 )
 
 # Load Oh My Zsh
