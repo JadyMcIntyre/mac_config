@@ -1,4 +1,4 @@
-# Jady's MacBook Configurations  
+# My MacBook Configurations  
 A repo for all my macOS configuration settings and tools. This includes **zsh functions**, **zshrc**, and **Neovim setup**.
 
 <details>
