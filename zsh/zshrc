@@ -59,7 +59,6 @@ fi
 # Define custom aliases here
 # Example:
 # alias zshconfig="nvim ~/.zshrc"
-# alias ohmyzsh="nvim ~/.oh-my-zsh"
 
 # ========================================
 # Paths
