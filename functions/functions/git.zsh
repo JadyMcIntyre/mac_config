@@ -47,7 +47,7 @@ gr() {
 }
 
 # Create a commit
-gc() {
+guc() {
 	# Get the list of files with changes (modified, staged, or untracked)
 	changed_files=$(git status --porcelain | awk '{print $2}')
 	if [ -z "$changed_files" ]; then
