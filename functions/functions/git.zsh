@@ -1,5 +1,11 @@
 # Git Functions:
 
+# uncommit accidental commit to main
+fm(){
+	gcm
+	git reset HEAD~1
+}
+
 # restore file to main
 # Usage: rf <path>
 rf() {
