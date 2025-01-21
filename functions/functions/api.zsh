@@ -1,5 +1,10 @@
 # API Functions:
 
+cd_api() {
+	~
+	cd /Users/JadyMcIntyre/outapp.webapi/OUTapp.WebApi
+}
+
 api() {
   # Navigate to the API directory.
   cd outapp.webapi/OUTapp.WebApi
