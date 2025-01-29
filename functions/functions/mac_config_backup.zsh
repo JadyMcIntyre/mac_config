@@ -1,36 +1,42 @@
 # File containing functions that save my mac configs
 save_functions() {
-	cd ~/Developer/mac_config
+    cd ~/Developer/mac_config
 
-	cp -r ~/.zsh/functions ./functions
+    cp -r ~/.zsh/functions ./functions
 
-	git add .
-	git commit -m "functions backup"
-	git push origin main
+    git add .
+    if ! git diff --cached --quiet; then
+        git commit -m "functions backup"
+        git push origin main
+    fi
 
-	cd
+    cd
 }
 
 save_zshrc() {
-	cd ~/Developer/mac_config
+    cd ~/Developer/mac_config
 
-	cp ~/.zshrc ./zsh/zshrc
+    cp ~/.zshrc ./zsh/zshrc
 
-	git add .
-	git commit -m "zshrc backup"
-	git push origin main
+    git add .
+    if ! git diff --cached --quiet; then
+        git commit -m "zshrc backup"
+        git push origin main
+    fi
 
-	cd
+    cd
 }
 
 save_nvim() {
-	cd ~/Developer/mac_config
+    cd ~/Developer/mac_config
 
-	cp -r ~/.config/nvim ./nvim
+    cp -r ~/.config/nvim ./nvim
 
-	git add .
-	git commit -m "nvim backup"
-	git push origin main
+    git add .
+    if ! git diff --cached --quiet; then
+        git commit -m "nvim backup"
+        git push origin main
+    fi
 
-	cd
+    cd
 }
