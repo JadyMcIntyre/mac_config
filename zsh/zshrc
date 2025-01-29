@@ -78,12 +78,6 @@ for func_file in ~/.zsh/functions/*.zsh; do
   source "$func_file"
 done
 
-# ========================================
-# Starship Prompt Configuration
-# ========================================
-# Initialize Starship prompt
-# eval "$(starship init zsh)"
-
 # =======================================
 
 echo "...Sourced zshrc"
