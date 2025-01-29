@@ -36,9 +36,8 @@ save_nvim() {
 
     git add .
     if ! git diff --cached --quiet; then
-	source ~/.zshrc
-        git commit -m "nvim backup"
-        git push origin main
+	    git commit -m "nvim backup"
+	    git push origin main
     fi
 
     cd

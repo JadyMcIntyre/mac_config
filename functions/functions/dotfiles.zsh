@@ -1,7 +1,6 @@
 # zsh
 ez() {
 	nvim ~/.zshrc
-	source ~/.zshrc 
 	save_zshrc
 }
 
