@@ -6,8 +6,9 @@ save_functions() {
 
     git add .
     if ! git diff --cached --quiet; then
-        git commit -m "functions backup"
-        git push origin main
+	    source ~/.zshrc
+	    git commit -m "functions backup"
+	    git push origin main
     fi
 
     cd
@@ -20,6 +21,7 @@ save_zshrc() {
 
     git add .
     if ! git diff --cached --quiet; then
+	source ~/.zshrc
         git commit -m "zshrc backup"
         git push origin main
     fi
@@ -34,6 +36,7 @@ save_nvim() {
 
     git add .
     if ! git diff --cached --quiet; then
+	source ~/.zshrc
         git commit -m "nvim backup"
         git push origin main
     fi
