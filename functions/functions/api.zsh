@@ -6,6 +6,9 @@ cd_api() {
 }
 
 api() {
+  # Nav out of current dir.
+  cd 
+  
   # Navigate to the API directory.
   cd outapp.webapi/OUTapp.WebApi
 
