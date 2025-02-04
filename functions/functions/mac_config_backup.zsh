@@ -1,44 +1,42 @@
-# File containing functions that save my mac configs
+# A helper function to perform the backup.
+# Arguments:
+#   1. Source path (absolute)
+#   2. Destination path (relative to ~/Developer/mac_config)
+#   3. Commit message
+#   4. cp flag (e.g. "-r" for directories, or empty for files)
+#   5. Optional: if the string "reload" is passed, source ~/.zshrc after copying
+backup() {
+  local src="$1"
+  local dest="$2"
+  local commit_msg="$3"
+  local cp_flag="$4"
+  local reload="$5"
+
+  # Change directory safely
+  pushd ~/Developer/mac_config > /dev/null || return
+
+  git add .
+  if ! git diff --cached --quiet; then
+    cp ${cp_flag} "$src" "$dest"
+    [ "$reload" = "reload" ] && source ~/.zshrc
+    git commit -m "$commit_msg"
+    git push origin main
+  fi
+
+  popd > /dev/null
+}
+
+# Backup your custom functions (a directory)
 save_functions() {
-    cd ~/Developer/mac_config
-
-    cp -r ~/.zsh/functions ./functions
-
-    git add .
-    if ! git diff --cached --quiet; then
-	    source ~/.zshrc
-	    git commit -m "functions backup"
-	    git push origin main
-    fi
-
-    cd
+  backup ~/.zsh/functions functions "functions backup" -r reload
 }
 
+# Backup your zshrc file
 save_zshrc() {
-    cd ~/Developer/mac_config
-
-    cp ~/.zshrc ./zsh/zshrc
-
-    git add .
-    if ! git diff --cached --quiet; then
-	source ~/.zshrc
-        git commit -m "zshrc backup"
-        git push origin main
-    fi
-
-    cd
+  backup ~/.zshrc zsh/zshrc "zshrc backup" "" reload
 }
 
+# Backup your nvim config (a directory)
 save_nvim() {
-    cd ~/Developer/mac_config
-
-    cp -r ~/.config/nvim ./nvim
-
-    git add .
-    if ! git diff --cached --quiet; then
-	    git commit -m "nvim backup"
-	    git push origin main
-    fi
-
-    cd
+  backup ~/.config/nvim nvim "nvim backup" -r
 }
